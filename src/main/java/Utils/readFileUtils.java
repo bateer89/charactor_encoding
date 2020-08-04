@@ -1,9 +1,11 @@
 package Utils;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import org.apache.poi.POIXMLDocument;
 import org.apache.poi.POIXMLTextExtractor;
@@ -17,6 +19,25 @@ import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 * <p>Description:</p>
 */
 public class readFileUtils {
+	/*
+	 * 获取字节流 
+	 * @param 文件路径     编码方式
+	 */
+	public static InputStreamReader getReaderByPath(String filepath, String coding) throws IOException{
+		ByteArrayInputStream stream = getByteStreamByPath(filepath);
+		InputStreamReader is = new InputStreamReader(stream,coding);
+		return is;
+	}
+	
+	/*
+	 * s
+	 */
+	public static ByteArrayInputStream getByteStreamByPath(String filepath) throws IOException{
+		String str = readFileUtils.getContentByPath(filepath);
+		ByteArrayInputStream stream = new ByteArrayInputStream(str.getBytes());
+		return stream;
+	}
+	
 	public static String getContentByPath(String filepath) throws IOException{
         String []fileTypeArr=filepath.split( "\\." );
         String fileType=fileTypeArr[fileTypeArr.length-1];
