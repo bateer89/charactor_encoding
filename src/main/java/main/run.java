@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import Utils.writeTxt;
+
 /**
  * @Author BaTeer
  * @Time 2020年8月3日 下午11:38:33
@@ -18,6 +20,7 @@ public class run {
 	private static final String CHAR_SET = "GB18030";
 	private static final String PATH1 = "D:\\用户目录\\我的文档\\WXWork\\1688851924181626\\Cache\\File\\2020-08\\字库编码new.doc";
 	private static final String PATH2 = "D:\\用户目录\\我的文档\\WXWork\\1688851924181626\\Cache\\File\\2020-08\\现代汉语常用词表.docx";
+	private static final String OUT_PATH = "C:\\Users\\Administrator\\Desktop\\结果.txt";
 
 	public static void main(String[] args) throws IOException {
 		int count = 0;
@@ -51,10 +54,11 @@ Boolean err = true;
 		for (int i = 0; i < targetListSplited.size(); i++) {
 			System.out.println(targetList.get(i));
 		}
+		writeTxt.write(OUT_PATH, targetList);
 		System.out.println(count);
-		for (int i = 0; i < errorList.size(); i++) {
-			System.out.println(errorList.get(i));
-		}
+//		for (int i = 0; i < errorList.size(); i++) {
+//			System.out.println(errorList.get(i));
+//		}
 	}
 
 }

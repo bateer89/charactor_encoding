@@ -22,10 +22,6 @@ public class getOrigin {
 		Stream<String> ss = bufReader.lines();
 		String[] lines = ss.toArray(String[]::new);
 		cut_lines.getWordMap(words, lines);
-//		System.out.println(words.size());
-//		words.forEach((key, value) -> {
-//			System.out.println(key + ":" + value);
-//		});
 		return words;
 	}
 }
