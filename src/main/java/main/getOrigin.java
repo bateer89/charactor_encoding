@@ -21,7 +21,7 @@ public class getOrigin {
 		Map<String, String> words = new HashMap<String, String>();// ´æ·Å
 		Stream<String> ss = bufReader.lines();
 		String[] lines = ss.toArray(String[]::new);
-		cut_lines.getWordMap(words, lines);
+		cut_lines.getWordMapWithCharacter(words, lines);
 		return words;
 	}
 }

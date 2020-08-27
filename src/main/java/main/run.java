@@ -20,7 +20,7 @@ public class run {
 	private static final String CHAR_SET = "GB18030";
 	private static final String PATH1 = "D:\\用户目录\\我的文档\\WXWork\\1688851924181626\\Cache\\File\\2020-08\\字库编码new.doc";
 	private static final String PATH2 = "D:\\用户目录\\我的文档\\WXWork\\1688851924181626\\Cache\\File\\2020-08\\现代汉语常用词表.docx";
-	private static final String OUT_PATH = "C:\\Users\\Administrator\\Desktop\\结果.txt";
+	private static final String OUT_PATH = "C:\\Users\\Administrator\\Desktop\\拼接.txt";
 
 	public static void main(String[] args) throws IOException {
 		int count = 0;
@@ -40,6 +40,7 @@ Boolean err = true;
 			for (int j = 0; j < targetListSplited.get(i).length; j++) {
 				if (words.get(targetListSplited.get(i)[j]) != null) {
 					temp += words.get(targetListSplited.get(i)[j]);
+					temp += " ";
 				} else {
 					temp += "?";
 					count++;
